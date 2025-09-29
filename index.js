@@ -1,5 +1,13 @@
 const express = require('express');
 const cors = require('cors');
+const mongoose = require('mongoose');
+
+
+mongoose.connect('mongodb+srv://heyshuaib43_db_user:shuaib@meerutmetro.utrofap.mongodb.net/').then(() => {
+    console.log('Database connected');
+}).catch((err) => {
+    console.log(err);
+});
 
 const app = express();
 
@@ -10,7 +18,7 @@ app.use(express.json());
 // Routes 
 const versionRoute = require('./Routes/version_routes');
 
-app.use('/api/v1',versionRoute);
+app.use('/api/v1', versionRoute);
 
 app.listen(3000, () => {
     console.log('server is running');
