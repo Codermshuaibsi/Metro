@@ -3,7 +3,12 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 
 
-mongoose.connect('mongodb+srv://heyshuaib43_db_user:shuaib@meerutmetro.utrofap.mongodb.net/').then(() => {
+mongoose.connect('mongodb+srv://heyshuaib43_db_user:shuaib@meerutmetro.utrofap.mongodb.net/',
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    }
+).then(() => {
     console.log('Database connected');
 }).catch((err) => {
     console.log(err);
