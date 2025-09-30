@@ -34,6 +34,6 @@ const metroStationSchema = new mongoose.Schema({
         type: String, // e.g. "11:00 PM"
         default: "11:00 PM"
     }
-}, { timestamps: true });
+});
 
 module.exports = mongoose.model('MetroStation', metroStationSchema);
