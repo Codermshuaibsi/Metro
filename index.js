@@ -22,8 +22,10 @@ app.use(express.json());
 
 // Routes 
 const versionRoute = require('./Routes/version_routes');
+const metroRoute = require('./Routes/metro_routes');
 
 app.use('/api/v1', versionRoute);
+app.use('/api/v1', metroRoute);
 
 app.listen(3000, () => {
     console.log('server is running');
